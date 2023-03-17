@@ -69,7 +69,10 @@ module.exports.signUp = async (req, res) => {
   } catch (error) {
     return res
       .status(500)
-      .json({ message: "Erreur interne du serveur : " + error });
+      .json({
+        message:
+          "Erreur interne du serveur, veuillez réessayez plus tard : " + error,
+      });
   }
   return res.status(201).json({ message: `L'utilisateur créer avec success` });
 };
