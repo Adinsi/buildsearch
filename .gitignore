@@ -1,5 +1,4 @@
 /node_modules
-/config/.env
 /client/node_modules
 /client/public
 /client/src
