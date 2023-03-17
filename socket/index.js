@@ -31,7 +31,7 @@ io.on("connection", (socket) => {
     const { receiverId } = data;
     const user = activeUsers.find((user) => user.userId === receiverId);
     console.log("Envoyé un message à :", receiverId);
-    console.log("Data: ", data);
+    console.log("Data is : ", data);
     if (user) {
       io.to(user.socketId).emit("recieve-message", data);
     }
