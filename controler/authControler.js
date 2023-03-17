@@ -22,13 +22,13 @@ module.exports.signUp = async (req, res) => {
     existingUser = await User.findOne({ email: email });
   } catch (err) {
     return res.status(500).json({
-      message: `Erreur interne du serveur ${err}, veuillez vérifiez votre connexion internet"`,
+      message: `Erreur interne du serveur ${err}`,
     });
   }
 
   if (existingUser) {
     return res.status(400).json({
-      message: "L'utilisateur avec cet email existe déjà ! connectez vous",
+      message: "L'utilisateur avec cet email existe déjà ! connectez vous ",
     });
   }
   // Crypter le mot de passe de l'utilisateur avec bcrypt
